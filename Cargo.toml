@@ -1,0 +1,25 @@
+[package]
+authors = ["Dylan Frankland <github@frankland.io>"]
+edition = "2021"
+license = "MIT"
+name = "tonic-no-codegen-example"
+publish = false
+version = "0.1.0"
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[dependencies]
+bytes = { version = "1" }
+http = { version = "0.2" }
+http-body = "0.4.4"
+protobuf = { version = "3.4.0", features = ["with-bytes"] }
+protobuf-parse = "3.4.0"
+tokio = { version = "1.0", features = ["rt-multi-thread", "macros"] }
+tonic = "0.11.0"
+tower = { version = "0.4" }
